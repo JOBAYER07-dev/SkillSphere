@@ -8,7 +8,7 @@
     "level": "Beginner",
     "category": "Development",
     "description": "Learn full-stack web development from scratch. Master HTML, CSS, JavaScript, React, Node.js, and MongoDB to build real-world projects.",
-    "image": "https://i.ibb.co/example1.png",
+    "image": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80",
     "curriculum": [
       "Introduction & Setup",
       "HTML5 Deep Dive",
@@ -32,7 +32,7 @@
     "level": "Intermediate",
     "category": "Design",
     "description": "Master UI/UX design from wireframing to prototyping. Learn Figma, design systems, user research, and create stunning interfaces.",
-    "image": "https://i.ibb.co/example2.png",
+    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80",
     "curriculum": [
       "Introduction to UI/UX",
       "Design Thinking Process",
@@ -56,7 +56,7 @@
     "level": "Beginner",
     "category": "Marketing",
     "description": "Learn digital marketing from scratch. Covers SEO, social media marketing, email campaigns, Google Ads, and analytics to grow any business.",
-    "image": "https://i.ibb.co/example3.png",
+    "image": "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&q=80",
     "curriculum": [
       "Digital Marketing Overview",
       "SEO Fundamentals",
@@ -80,7 +80,7 @@
     "level": "Intermediate",
     "category": "AI / ML",
     "description": "Dive into artificial intelligence and machine learning. Learn Python, data preprocessing, supervised learning, neural networks, and real-world AI applications.",
-    "image": "https://i.ibb.co/example4.png",
+    "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80",
     "curriculum": [
       "Introduction to AI & ML",
       "Python for Data Science",
@@ -104,7 +104,7 @@
     "level": "Intermediate",
     "category": "Cloud",
     "description": "Get hands-on experience with Amazon Web Services. Learn EC2, S3, Lambda, RDS, and how to deploy scalable cloud applications.",
-    "image": "https://i.ibb.co/example5.png",
+    "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=600&q=80",
     "curriculum": [
       "Cloud Computing Basics",
       "AWS Console Overview",
@@ -128,7 +128,7 @@
     "level": "Beginner",
     "category": "Security",
     "description": "Learn the fundamentals of cybersecurity. Covers network security, ethical hacking basics, threat detection, encryption, and security best practices.",
-    "image": "https://i.ibb.co/example6.png",
+    "image": "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&q=80",
     "curriculum": [
       "Introduction to Cybersecurity",
       "Network Security Basics",
