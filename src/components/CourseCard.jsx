@@ -5,44 +5,39 @@ import Link from 'next/link';
 const CourseCard = ({ course }) => {
   return (
     <div className="card bg-base-100 border border-base-300 hover:shadow-lg transition-shadow duration-300">
-     
-      <figure className="relative h-40 w-full overflow-hidden">
-        <Image
-          src={course.image}
-          alt={course.title}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          onError={e => {
-            e.target.src = 'https://placehold.co/400x300?text=No+Image';
-          }}
-        />
-      
+      <figure className="relative h-80 w-full overflow-hidden aspect-square">
+        
+          <Image
+            src={course.image}
+            alt={course.title}
+            fill
+            className="object-cover rounded-xl"
+            onError={e => {
+              e.target.src = 'https://placehold.co/400x300?text=No+Image';
+            }}
+          />
+        
+
         <span className="absolute top-2 left-2 bg-primary text-white text-xs font-bold px-2 py-0.5 rounded">
           {course.isNew ? 'NEW' : 'HOT'}
         </span>
-        
+
         <span className="absolute top-2 right-2 bg-base-100 text-base-content text-xs px-2 py-0.5 rounded">
           {course.level}
         </span>
       </figure>
 
-      
       <div className="card-body p-4">
-    
         <span className="text-primary text-xs font-semibold uppercase tracking-wide">
           {course.category}
         </span>
 
-        
         <h3 className="card-title text-sm font-bold leading-snug mt-1">
           {course.title}
         </h3>
 
-       
         <p className="text-base-content/60 text-xs">👤 {course.instructor}</p>
 
-       
         <div className="flex items-center justify-between mt-2">
           <span className="text-yellow-500 text-xs font-semibold">
             ★ {course.rating}
@@ -57,7 +52,6 @@ const CourseCard = ({ course }) => {
           🎓 {course.enrolled.toLocaleString()} students enrolled
         </p>
 
-       
         <div className="card-actions mt-3">
           <Link
             href={`/courses/${course.id}`}

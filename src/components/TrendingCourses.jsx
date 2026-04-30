@@ -1,4 +1,5 @@
 
+import Link from "next/link";
 import CourseCard from "./CourseCard";
 
 const TrendingCourses = async () => {
@@ -18,9 +19,17 @@ const TrendingCourses = async () => {
         </p>
       </div>
       <div className="grid grid-cols-3 gap-4">
-        {
-          trendingCourses.map(course => <CourseCard key={course.id} course={course} />)
-        }
+        {trendingCourses.map(course => (
+          <CourseCard key={course.id} course={course} />
+        ))}
+      </div>
+
+      <div>
+        <Link href="/courses">
+          <button className="btn btn-outline btn-primary mt-6 mx-auto block">
+            View All Courses
+          </button>
+        </Link>
       </div>
     </div>
   );
