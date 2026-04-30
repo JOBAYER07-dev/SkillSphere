@@ -1,0 +1,39 @@
+
+[
+  {
+    "id": 1,
+    "icon": "🎯",
+    "title": "Set Clear Goals",
+    "description": "Break your learning into weekly milestones to track progress consistently and stay motivated."
+  },
+  {
+    "id": 2,
+    "icon": "⏰",
+    "title": "Manage Your Time",
+    "description": "Dedicate 1-2 hours daily. Consistent short sessions beat marathon cramming every time."
+  },
+  {
+    "id": 3,
+    "icon": "🔄",
+    "title": "Practice Actively",
+    "description": "Build projects alongside watching lessons. Hands-on practice beats passive reading always."
+  },
+  {
+    "id": 4,
+    "icon": "📝",
+    "title": "Take Notes",
+    "description": "Write down key concepts in your own words. Teaching yourself is the best way to learn."
+  },
+  {
+    "id": 5,
+    "icon": "🤝",
+    "title": "Join the Community",
+    "description": "Connect with fellow learners, ask questions and share your progress to stay accountable."
+  },
+  {
+    "id": 6,
+    "icon": "🔁",
+    "title": "Review Regularly",
+    "description": "Revisit previous lessons weekly. Spaced repetition is the key to long-term retention."
+  }
+]

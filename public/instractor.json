@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "role": "Full Stack Developer",
+    "avatar": "https://i.ibb.co/instructor1.png",
+    "totalCourses": 12,
+    "rating": 4.8,
+    "totalStudents": 24000,
+    "bio": "10+ years experience in web development. Expert in React, Node.js and cloud technologies."
+  },
+  {
+    "id": 2,
+    "name": "Sarah Chen",
+    "role": "UI/UX Designer",
+    "avatar": "https://i.ibb.co/instructor2.png",
+    "totalCourses": 8,
+    "rating": 4.9,
+    "totalStudents": 18000,
+    "bio": "Senior designer at top tech companies. Specializes in Figma, design systems and user research."
+  },
+  {
+    "id": 3,
+    "name": "Mike Ross",
+    "role": "Growth Marketer",
+    "avatar": "https://i.ibb.co/instructor3.png",
+    "totalCourses": 6,
+    "rating": 4.7,
+    "totalStudents": 12000,
+    "bio": "Digital marketing expert with experience running campaigns for Fortune 500 companies."
+  },
+  {
+    "id": 4,
+    "name": "Emily Watson",
+    "role": "AI/ML Engineer",
+    "avatar": "https://i.ibb.co/instructor4.png",
+    "totalCourses": 9,
+    "rating": 4.9,
+    "totalStudents": 31000,
+    "bio": "PhD in Machine Learning. Previously at Google Brain and OpenAI research teams."
+  }
+]

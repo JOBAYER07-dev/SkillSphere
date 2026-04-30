@@ -1,14 +1,10 @@
-// src/components/Footer.jsx
-
 import Link from 'next/link';
 import { FaFacebook, FaTwitter, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
 export default function Footer() {
   return (
     <footer className="bg-base-200 mt-auto">
-      {/* ===== MAIN FOOTER ===== */}
       <div className="max-w-7xl mx-auto px-10 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* ===== Brand Section ===== */}
         <div>
           <h2 className="text-2xl font-bold mb-3">
             Skill<span className="text-primary">Sphere</span>
@@ -45,7 +41,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ===== Quick Links ===== */}
         <div>
           <p className="text-base-content font-semibold text-sm uppercase tracking-wider mb-4">
             Quick Links
@@ -94,14 +89,13 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* ===== Contact ===== */}
         <div>
           <p className="text-base-content font-semibold text-sm uppercase tracking-wider mb-4">
             Contact
           </p>
           <ul className="flex flex-col gap-3 text-sm text-base-content/70">
-            <li>📧 hello@skillsphere.com</li>
-            <li>📞 +1 800 SKILL</li>
+            <li>📧 jobayerhosen045@gmail.com</li>
+            <li>📞 01861961550</li>
             <li>📍 Dhaka, Bangladesh</li>
           </ul>
 
@@ -129,7 +123,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ===== BOTTOM BAR ===== */}
       <div className="border-t border-base-300">
         <div className="max-w-7xl mx-auto px-10 py-4 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="text-sm text-base-content/60">
