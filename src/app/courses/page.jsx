@@ -1,8 +1,38 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import CourseCard from '@/components/CourseCard';
 
-const AllCourses = async () => {
-  const res = await fetch('https://skill-sphere-sable.vercel.app/data.json');
-  const data = await res.json();
+export default function AllCourses() {
+  const [courses, setCourses] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  useEffect(() => {
+    fetch('https://skill-sphere-sable.vercel.app/data.json')
+      .then(res => res.json())
+      .then(data => setCourses(data))
+      .catch(err => console.error('Failed to fetch courses:', err));
+  }, []);
+
+  const filteredCourses = courses.filter(course => {
+    const matchCategory =
+      selectedCategory === 'All' || course.category === selectedCategory;
+    const matchSearch = course.title
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+    return matchCategory && matchSearch;
+  });
+
+  const categories = [
+    'All',
+    'Development',
+    'Design',
+    'Marketing',
+    'AI / ML',
+    'Cloud',
+    'Security',
+  ];
 
   return (
     <div>
@@ -39,25 +69,24 @@ const AllCourses = async () => {
                 type="text"
                 placeholder="Search courses by title..."
                 className="flex-1 bg-transparent outline-none text-sm text-base-content placeholder:text-base-content/30"
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
               />
             </div>
+
             <button className="btn btn-primary rounded-xl px-6">Search</button>
           </div>
 
-          {/* Filter Badges */}
           <div className="flex flex-wrap gap-2 mt-4">
-            {[
-              'All',
-              'Development',
-              'Design',
-              'Marketing',
-              'AI / ML',
-              'Cloud',
-              'Security',
-            ].map(cat => (
+            {categories.map(cat => (
               <button
                 key={cat}
-                className="badge badge-outline hover:badge-primary cursor-pointer transition-all text-xs py-3 px-3"
+                onClick={() => setSelectedCategory(cat)}
+                className={`badge badge-outline cursor-pointer transition-all text-xs py-3 px-3 ${
+                  selectedCategory === cat
+                    ? 'badge-primary bg-primary text-white'
+                    : 'hover:badge-primary'
+                }`}
               >
                 {cat}
               </button>
@@ -69,16 +98,21 @@ const AllCourses = async () => {
       {/* Course Grid */}
       <div className="container mx-auto px-6 py-8">
         <p className="text-base-content/50 text-sm mb-4">
-          {data.length} courses found
+          {filteredCourses.length} courses found
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {data.map(course => (
-            <CourseCard key={course.id} course={course} />
-          ))}
-        </div>
+
+        {filteredCourses.length === 0 ? (
+          <div className="text-center py-10 text-base-content/60">
+            No courses found matching your criteria.
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {filteredCourses.map(course => (
+              <CourseCard key={course.id} course={course} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
-};
-
-export default AllCourses;
+}
