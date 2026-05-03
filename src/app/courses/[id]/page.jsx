@@ -1,9 +1,13 @@
+import { notFound } from 'next/navigation';
+
 const CourseDetailsPage = async ({ params }) => {
   const { id } = await params;
 
   const res = await fetch('https://skill-sphere-sable.vercel.app/data.json');
   const data = await res.json();
   const course = data.find(c => c.id === parseInt(id));
+
+  if (!course) notFound();
 
   const curriculumDurations = [
     'Free',
