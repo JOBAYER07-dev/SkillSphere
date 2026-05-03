@@ -10,7 +10,7 @@ const LoginPage = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
-  // ===== Email Login =====
+  //  Email Login 
   const handleLogin = async e => {
     e.preventDefault();
     setLoading(true);
@@ -33,7 +33,7 @@ const LoginPage = () => {
     }
   };
 
-  // ===== Google Login =====
+  //  Google Login 
   const handleGoogle = async () => {
     const { error } = await authClient.signIn.social({
       provider: 'google',
@@ -48,7 +48,7 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen bg-base-200 flex items-center justify-center px-4 py-12">
       <div className="bg-base-100 rounded-2xl shadow-md w-full max-w-md px-8 py-10">
-        {/* ===== Logo ===== */}
+        {/*  Logo  */}
         <div className="text-center mb-1">
           <h2 className="text-xl font-bold">
             Skill<span className="text-primary">Sphere</span>
@@ -58,12 +58,12 @@ const LoginPage = () => {
           </p>
         </div>
 
-        {/* ===== Title ===== */}
+        {/*  Title  */}
         <h1 className="text-xl font-bold text-center mt-4 mb-6">
           Login to your account
         </h1>
 
-        {/* ===== Form ===== */}
+        {/*  Form  */}
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
           {/* Email */}
           <div>
@@ -105,12 +105,12 @@ const LoginPage = () => {
           </button>
         </form>
 
-        {/* ===== Divider ===== */}
+        {/*  Divider  */}
         <div className="divider text-xs text-base-content/40 my-4">
           or continue with
         </div>
 
-        {/* ===== Google Button ===== */}
+        {/*  Google Button  */}
         <button
           onClick={handleGoogle}
           className="btn btn-outline w-full flex items-center gap-2"
@@ -136,7 +136,7 @@ const LoginPage = () => {
           Continue with Google
         </button>
 
-        {/* ===== Register Link ===== */}
+        {/*  Register Link  */}
         <p className="text-center text-sm text-base-content/60 mt-5">
           Don't have an account?{' '}
           <Link href="/register" className="text-primary font-semibold">

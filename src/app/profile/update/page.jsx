@@ -39,7 +39,7 @@ const UpdateProfile = () => {
   return (
     <div className="min-h-screen bg-base-200 flex items-center justify-center px-4 py-12">
       <div className="bg-base-100 rounded-2xl shadow-md w-full max-w-md px-8 py-10">
-        {/* ===== Logo ===== */}
+        {/*  Logo  */}
         <div className="text-center mb-1">
           <h2 className="text-xl font-bold">
             Skill<span className="text-primary">Sphere</span>
@@ -49,12 +49,12 @@ const UpdateProfile = () => {
           </p>
         </div>
 
-        {/* ===== Title ===== */}
+        {/*  Title  */}
         <h1 className="text-xl font-bold text-center mt-4 mb-6">
           Update Information
         </h1>
 
-        {/* ===== Form ===== */}
+        {/*  Form  */}
         <form onSubmit={handleUpdate} className="flex flex-col gap-4">
           {/* Display Name */}
           <div>
@@ -86,7 +86,7 @@ const UpdateProfile = () => {
             />
           </div>
 
-          {/* ===== Avatar Preview ===== */}
+          {/*  Avatar Preview  */}
           <div className="flex flex-col items-center gap-2 my-1">
             <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl overflow-hidden ring-4 ring-base-300">
               {imagePreview ? (
@@ -119,7 +119,7 @@ const UpdateProfile = () => {
           </button>
         </form>
 
-        {/* ===== Back Link ===== */}
+        {/*  Back Link  */}
         <div className="text-center mt-5">
           <Link href="/profile" className="text-primary text-sm font-semibold">
             ← Back to Profile

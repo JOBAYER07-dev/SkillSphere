@@ -40,7 +40,7 @@ const RegisterPage = () => {
   return (
     <div className="min-h-screen bg-base-200 flex items-center justify-center px-4 py-12">
       <div className="bg-base-100 rounded-2xl shadow-md w-full max-w-md px-8 py-10">
-        {/* ===== Logo ===== */}
+        {/*  Logo  */}
         <div className="text-center mb-1">
           <h2 className="text-xl font-bold">
             Skill<span className="text-primary">Sphere</span>
@@ -50,12 +50,12 @@ const RegisterPage = () => {
           </p>
         </div>
 
-        {/* ===== Title ===== */}
+        {/*  Title  */}
         <h1 className="text-xl font-bold text-center mt-4 mb-6">
           Create an account
         </h1>
 
-        {/* ===== Form ===== */}
+        {/*  Form  */}
         <form onSubmit={handleRegister} className="flex flex-col gap-4">
           {/* Full Name */}
           <div>
@@ -125,7 +125,7 @@ const RegisterPage = () => {
           </button>
         </form>
 
-        {/* ===== Login Link ===== */}
+        {/*  Login Link  */}
         <p className="text-center text-sm text-base-content/60 mt-5">
           Already have an account?{' '}
           <Link href="/login" className="text-primary font-semibold">

@@ -35,7 +35,7 @@ export default function Navbar() {
 
   return (
     <div className="navbar bg-base-100 shadow-sm sticky top-0 z-50">
-      {/* ===== LEFT ===== */}
+      {/*  LEFT  */}
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -66,12 +66,12 @@ export default function Navbar() {
         </Link>
       </div>
 
-      {/* ===== CENTER ===== */}
+      {/*  CENTER  */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
 
-      {/* ===== RIGHT ===== */}
+      {/*  RIGHT  */}
       <div className="navbar-end gap-2">
         {isPending ? (
           <span className="loading loading-spinner loading-sm"></span>
@@ -114,7 +114,7 @@ export default function Navbar() {
             </ul>
           </div>
         ) : (
-          // ---- Logged OUT ----
+          //  Logged OUT 
           <>
             <Link href="/login" className="btn btn-ghost btn-sm">
               Login
