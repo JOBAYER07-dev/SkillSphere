@@ -1,10 +1,8 @@
-import React from 'react';
-
 const loading = () => {
   return (
-    <div className='flex justify-center items-center'>
-      <h2>Loading...</h2>
-      <progress className="progress w-56"></progress>
+    <div className="min-h-screen flex flex-col justify-center items-center gap-4">
+      <span className="loading loading-spinner loading-lg text-primary"></span>
+      <p className="text-base-content/60 text-sm">Loading...</p>
     </div>
   );
 };

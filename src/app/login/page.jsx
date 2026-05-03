@@ -10,7 +10,7 @@ const LoginPage = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
-  //  Email Login 
+  //  Email Login
   const handleLogin = async e => {
     e.preventDefault();
     setLoading(true);
@@ -33,7 +33,7 @@ const LoginPage = () => {
     }
   };
 
-  //  Google Login 
+  //  Google Login
   const handleGoogle = async () => {
     const { error } = await authClient.signIn.social({
       provider: 'google',

@@ -76,7 +76,7 @@ export default function Navbar() {
         {isPending ? (
           <span className="loading loading-spinner loading-sm"></span>
         ) : user ? (
-          // ---- Logged IN ----
+          //  Logged IN
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
@@ -114,7 +114,7 @@ export default function Navbar() {
             </ul>
           </div>
         ) : (
-          //  Logged OUT 
+          //  Logged OUT
           <>
             <Link href="/login" className="btn btn-ghost btn-sm">
               Login

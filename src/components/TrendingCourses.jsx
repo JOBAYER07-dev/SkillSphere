@@ -1,6 +1,5 @@
-
-import Link from "next/link";
-import CourseCard from "./CourseCard";
+import Link from 'next/link';
+import CourseCard from './CourseCard';
 
 const TrendingCourses = async () => {
   const res = await fetch('https://skill-sphere-sable.vercel.app/data.json');
