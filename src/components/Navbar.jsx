@@ -74,7 +74,11 @@ export default function Navbar() {
       {/*  RIGHT  */}
       <div className="navbar-end gap-2">
         {isPending ? (
-          <span className="loading loading-spinner loading-sm"></span>
+          //  Skeleton Loading
+          <div className="flex gap-2">
+            <div className="w-16 h-8 bg-base-300 rounded-lg animate-pulse"></div>
+            <div className="w-20 h-8 bg-base-300 rounded-lg animate-pulse"></div>
+          </div>
         ) : user ? (
           //  Logged IN
           <div className="dropdown dropdown-end">

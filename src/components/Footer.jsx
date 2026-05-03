@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaFacebook, FaTwitter, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaLinkedin, FaYoutube, FaGithub } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -15,19 +15,19 @@ export default function Footer() {
           </p>
           <div className="flex gap-3 mt-2">
             <a
-              href="#"
+              href="https://www.facebook.com/jobayer.hosen.juba"
               className="btn btn-ghost btn-circle btn-sm text-primary hover:bg-primary hover:text-white"
             >
               <FaFacebook size={16} />
             </a>
             <a
-              href="#"
+              href="https://github.com/JOBAYER07-dev"
               className="btn btn-ghost btn-circle btn-sm text-primary hover:bg-primary hover:text-white"
             >
-              <FaTwitter size={16} />
+              <FaGithub size={16} />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/jobayer-dev/"
               className="btn btn-ghost btn-circle btn-sm text-primary hover:bg-primary hover:text-white"
             >
               <FaLinkedin size={16} />
