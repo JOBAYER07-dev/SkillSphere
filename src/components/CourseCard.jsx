@@ -4,24 +4,20 @@ import Link from 'next/link';
 
 const CourseCard = ({ course }) => {
   return (
-    <div className="card bg-base-100 border border-base-300 hover:shadow-lg transition-shadow duration-300">
-      <figure className="relative h-80 w-full overflow-hidden aspect-square">
-        
-          <Image
-            src={course.image}
-            alt={course.title}
-            fill
-            className="object-cover rounded-xl"
-            onError={e => {
-              e.target.src = 'https://placehold.co/400x300?text=No+Image';
-            }}
-          />
-        
-
+    <div className="card bg-base-100 border border-base-300 hover:shadow-xl hover:-translate-y-1 hover:border-primary/30 transition-all duration-300 group">
+      <figure className="relative h-48 w-full overflow-hidden">
+        <Image
+          src={course.image}
+          alt={course.title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          onError={e => {
+            e.target.src = 'https://placehold.co/400x300?text=No+Image';
+          }}
+        />
         <span className="absolute top-2 left-2 bg-primary text-white text-xs font-bold px-2 py-0.5 rounded">
           {course.isNew ? 'NEW' : 'HOT'}
         </span>
-
         <span className="absolute top-2 right-2 bg-base-100 text-base-content text-xs px-2 py-0.5 rounded">
           {course.level}
         </span>
@@ -32,7 +28,7 @@ const CourseCard = ({ course }) => {
           {course.category}
         </span>
 
-        <h3 className="card-title text-sm font-bold leading-snug mt-1">
+        <h3 className="card-title text-sm font-bold leading-snug mt-1 group-hover:text-primary transition-colors duration-300">
           {course.title}
         </h3>
 
@@ -47,7 +43,6 @@ const CourseCard = ({ course }) => {
           </span>
         </div>
 
-        {/* Enrolled */}
         <p className="text-base-content/50 text-xs mt-1">
           🎓 {course.enrolled.toLocaleString()} students enrolled
         </p>
@@ -55,7 +50,7 @@ const CourseCard = ({ course }) => {
         <div className="card-actions mt-3">
           <Link
             href={`/courses/${course.id}`}
-            className="btn btn-primary btn-sm w-full"
+            className="btn btn-primary btn-sm w-full group-hover:btn-active transition-all duration-300"
           >
             View Details
           </Link>
