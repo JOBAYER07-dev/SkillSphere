@@ -5,8 +5,10 @@ const PopularCourses = async () => {
   const res = await fetch('https://skill-sphere-sable.vercel.app/data.json');
   const data = await res.json();
 
-  //  Top 3 highest rated courses
-  const popularCourses = data.sort((a, b) => b.rating - a.rating).slice(0, 3);
+  const popularCourses = data
+    .filter(course => !course.isTrending)
+    .sort((a, b) => b.rating - a.rating)
+    .slice(0, 3);
 
   return (
     <section className="py-12 px-4 max-w-7xl mx-auto">
