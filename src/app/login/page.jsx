@@ -5,10 +5,14 @@ import { useState } from 'react';
 import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
+import { useSearchParams } from 'next/navigation';
 
 const LoginPage = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
+
+  const redirectTo = searchParams.get('redirect') || '/';
 
   //  Email Login
   const handleLogin = async e => {
@@ -29,7 +33,8 @@ const LoginPage = () => {
       toast.error(error.message || 'Login failed. Try again.');
     } else {
       toast.success('Logged in successfully!');
-      router.push('/');
+
+      router.push(redirectTo);
     }
   };
 
@@ -37,7 +42,7 @@ const LoginPage = () => {
   const handleGoogle = async () => {
     const { error } = await authClient.signIn.social({
       provider: 'google',
-      callbackURL: '/',
+      callbackURL: redirectTo,
     });
 
     if (error) {
