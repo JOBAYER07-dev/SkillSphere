@@ -1,20 +1,19 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 import { useSearchParams } from 'next/navigation';
 
-const LoginPage = () => {
+const LoginForm = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [loading, setLoading] = useState(false);
 
   const redirectTo = searchParams.get('redirect') || '/';
 
-  //  Email Login
   const handleLogin = async e => {
     e.preventDefault();
     setLoading(true);
@@ -22,10 +21,7 @@ const LoginPage = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const { error } = await authClient.signIn.email({
-      email,
-      password,
-    });
+    const { error } = await authClient.signIn.email({ email, password });
 
     setLoading(false);
 
@@ -33,18 +29,15 @@ const LoginPage = () => {
       toast.error(error.message || 'Login failed. Try again.');
     } else {
       toast.success('Logged in successfully!');
-
       router.push(redirectTo);
     }
   };
 
-  //  Google Login
   const handleGoogle = async () => {
     const { error } = await authClient.signIn.social({
       provider: 'google',
       callbackURL: redirectTo,
     });
-
     if (error) {
       toast.error('Google sign-in failed. Try again.');
     }
@@ -70,7 +63,6 @@ const LoginPage = () => {
 
         {/*  Form  */}
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
-          {/* Email */}
           <div>
             <label className="text-sm font-semibold mb-1 block">
               Email address
@@ -83,8 +75,6 @@ const LoginPage = () => {
               className="input input-bordered w-full"
             />
           </div>
-
-          {/* Password */}
           <div>
             <label className="text-sm font-semibold mb-1 block">Password</label>
             <input
@@ -95,8 +85,6 @@ const LoginPage = () => {
               className="input input-bordered w-full"
             />
           </div>
-
-          {/* Submit Button */}
           <button
             type="submit"
             className="btn btn-primary w-full mt-1"
@@ -150,6 +138,20 @@ const LoginPage = () => {
         </p>
       </div>
     </div>
+  );
+};
+
+const LoginPage = () => {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex justify-center items-center">
+          <span className="loading loading-spinner loading-lg text-primary"></span>
+        </div>
+      }
+    >
+      <LoginForm />
+    </Suspense>
   );
 };
 
